@@ -90,7 +90,8 @@ header a{
 /* Cars section */
 
 .car ,
-.parts{
+.parts ,
+.blog{
     text-align:center;
     width: 1200px;
     max-width: 90%;;
@@ -99,25 +100,30 @@ header a{
     word-spacing: 0px;
 }
 
-.car{
+.car , 
+.parts {
     margin-bottom: 200px;
 }
 .car h2 , 
-.parts h2{
+.parts h2 ,
+.blog h2{
     color: var(--dark-red);
     font-size: 30px;
     font-weight: 800;
 }
 
 .car .text-2 ,
-.parts .text-2{
+.parts .text-2 ,
+.blog .text-2 {
     font-weight: 700;;
 }
 
 .car .text-3 ,
-.parts .text-3 , 
 .car .text-2 ,
-.parts .text-2 {
+.parts .text-3 , 
+.parts .text-2 ,
+.blog .text-2 ,
+.blog .text-3{
     color: black;
     padding-bottom: 30px;
 }
@@ -294,8 +300,79 @@ header a{
 .parts .view-more:hover{
     color: var(--dark-red);
     cursor: pointer;
-    letter-spacing: 5px;
+    letter-spacing: 3px;
     width: 157px;
 }
 
 /* end parts section */
+
+/* start blog section */
+
+.blog .cards {
+    display: grid;
+    --gap: 20px;
+    grid-template-rows: repeat(3 , calc((100% - 2*var(--gap)) /3));
+    gap: var(--gap);
+}
+
+.blog .cards div {
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: 30% 100%;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    background-color: #eee;
+}
+
+.blog .cards .blog1{
+    background-image: url("imgs/car1.jpg");
+}
+.blog .cards .blog2{
+    background-image: url("imgs/car2.jpg");
+}
+.blog .cards .blog3{
+    background-image: url("imgs/car11.jpg");
+}
+
+
+.blog .cards .text-1{
+    font-weight: 700;
+    color: var(--dark-red);
+    padding-left: 1000px;
+    padding-top: 50px;
+}
+
+.blog .cards .text-2{
+    padding-top: 50px;
+    font-weight: 700;
+    font-size: 20px;;
+    color: var(--dark-red)
+}
+
+.blog .cards .text-3{
+    text-align: left;
+    padding-left: 450px;
+    text-indent: 20px;;
+}
+
+.blog .btn{
+    background-color: var(--dark-red);
+    width: 200px;
+    height: 50px;
+    border-radius: var(--radius);
+    border: solid 1px transparent;
+    transition: var(--transition);
+    font-size: 18px;;
+    color: #eee;
+    position: relative;
+    left: 10px;
+    top: -70px;
+    margin-right: 120px;
+}
+
+.blog .btn:hover{
+    background-color: var(--white-red);
+    color: #eee;
+    cursor: pointer;
+    transform: scale(1.03);
+}
