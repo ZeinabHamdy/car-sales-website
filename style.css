@@ -35,9 +35,9 @@ nav {
 nav h1{
     font-size: 25px;
 }
-span{
+/* span{
     color: rgb(205, 3, 3);
-}
+} */
 ul {
     display: flex;
     justify-content: space-between;
@@ -89,9 +89,8 @@ header a{
 
 /* Cars section */
 
-
-
-.car{
+.car ,
+.parts{
     text-align:center;
     width: 1200px;
     max-width: 90%;;
@@ -100,19 +99,25 @@ header a{
     word-spacing: 0px;
 }
 
-.car h2{
+.car{
+    margin-bottom: 200px;
+}
+.car h2 , 
+.parts h2{
     color: var(--dark-red);
-
     font-size: 30px;
     font-weight: 800;
 }
-.car .text-2{
-    color: black;
+
+.car .text-2 ,
+.parts .text-2{
     font-weight: 700;;
-    padding-bottom: 10px;
 }
 
-.car .text-3{
+.car .text-3 ,
+.parts .text-3 , 
+.car .text-2 ,
+.parts .text-2 {
     color: black;
     padding-bottom: 30px;
 }
@@ -126,7 +131,7 @@ header a{
     gap: var(--gap);
 }
 
-.car .cards div{
+.car .cards div {
     height: 300px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -134,7 +139,7 @@ header a{
     transition: var(--transition);
 }
 
-.car .cards div:hover{
+.car .cards div:hover {
     transform: scale(1.02);
     cursor: pointer;
 }
@@ -188,3 +193,109 @@ header a{
 }
 
 /* end cars section */
+
+/* start parts section (note:- there exist common properties with cars section )*/
+.parts .cards {
+    display: grid;
+    --gap: 20px;
+    grid-template-rows: repeat(2 , calc((100% - 2*var(--gap)) /2));
+    grid-template-columns: repeat(3 , calc((100% - 2*var(--gap)) /3));
+    gap: var(--gap);
+}
+
+
+.parts .cards .part1{
+    background-image: url("imgs/part1.png");
+}
+.parts .cards .part2{
+    background-image: url("imgs/part2.png");
+}
+.parts .cards .part3{
+    background-image: url("imgs/part3.png");
+}
+.parts .cards .part4{
+    background-image: url("imgs/part4.png");
+}
+.parts .cards .part5{
+    background-image: url("imgs/part5.png");
+}
+.parts .cards .part6{
+    background-image: url("imgs/part6.png");
+}
+
+.parts .cards .part1 , 
+.parts .cards .part2 ,
+.parts .cards .part3 ,
+.parts .cards .part4 ,
+.parts .cards .part5 ,
+.parts .cards .part6{
+    height: 500px;
+    background-repeat: no-repeat;
+    background-size: 100% 60%;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    background-color: #eee;
+
+}
+
+.parts .content{
+    margin-top: 80%;
+    padding-left: 30px;
+    text-align: left;
+    color: var(--dark-red)
+}
+
+.parts .content h3{
+    color: black;
+}
+.parts .content h3 ,
+.parts .content .price {
+    font-size: 20px;
+    font-weight: 700;
+
+}
+
+
+.parts .content .rate{
+    font-weight: 700;
+}
+
+.parts .buy-now{
+    background-color: var(--dark-red);
+    width: 100px;
+    height: 50px;
+    border-radius: var(--radius);
+    border: solid 1px transparent;
+    transition: var(--transition);
+    font-size: 18px;;
+    color: #eee;
+    position: relative;
+    left: 0px;
+    top: 20px;
+    margin-right: 120px;
+}
+
+.parts .buy-now:hover{
+    background-color: var(--white-red);
+    color: #eee;
+    cursor: pointer;
+}
+
+.parts .view-more{
+    width: 110px;
+    color: black;
+    position: relative;
+    left: 200px;
+    top: -25px;
+    font-size: 18px;;
+    transition: var(--transition);
+}
+
+.parts .view-more:hover{
+    color: var(--dark-red);
+    cursor: pointer;
+    letter-spacing: 5px;
+    width: 157px;
+}
+
+/* end parts section */
