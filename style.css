@@ -19,31 +19,54 @@
     --o-box-sizing: border-box;
     box-sizing: border-box;
     font-family: "Cairo", sans-serif;
+    scroll-padding-top: 1rem;
+    scroll-behavior: smooth;
 
 
+}
+/* scroll */
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-track{
+    background-color: #858383;
+}
+::-webkit-scrollbar-thumb{
+    background: #0000006a;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #000000;
 }
 
 /* start navbar  */
 nav {
+    /* display: block; */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 130;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #fff6f6;
-    padding: 15px 60px;
+    padding: 10px 60px;
     box-shadow: 0.5px 0.5px 3px rgb(205, 3, 3);
 }
 nav h1{
     font-size: 25px;
 }
-/* span{
-    color: rgb(205, 3, 3);
-} */
-ul {
+.redColor{
+    color: var(--dark-red);
+}
+nav ul {
     display: flex;
     justify-content: space-between;
 }
 nav .linksNav ul a{
     /* display: inline-block; */
+    font-weight: 600;
     margin: auto 20px;
     color: black;
     padding: 5px;
@@ -58,13 +81,18 @@ nav .linksNav ul a:hover{
 
 /* start header */
 header{
-    padding: 60px;
+    padding: 100px 60px 60px;
     display: flex;
     align-items: center;
     min-height: 400px;
     /* bg img */
+    background-image: url("./imgs/bgcover.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center left;
 }
 .contentHeader{
+    
     width: 40%;
     padding: 10px;
 }
@@ -81,10 +109,58 @@ header p{
 header a{
     margin: 40px auto;
     color: #f7f6f6;
-    background-color: rgb(205, 3, 3);
+    background-color: var(--dark-red);
     padding: 10px;
+    border-radius: var(--radius);
+    font-size: 18px;
+    transition: var(--transition);
 }
+header a:hover{
+    background-color: red;
+}
+ /* about  */
+.about {
+    display: flex;
+    padding: 100px 50px;
+    align-items: center;
+    justify-content: space-between;
 
+}
+.about .imgAbout {
+    width: 50%;
+    text-align: center;
+
+}
+.imgAbout img {
+    width: 80%;
+}
+.about .texts h2{
+    color: var(--dark-red);
+    font-size: 30px;
+    font-weight: 800;
+}
+.about .texts h3{
+    width: 300px;
+    font-size: 35px;
+    font-weight: 700;
+
+}
+.about .texts a{
+    margin: 40px auto;
+    color: #f7f6f6;
+    background-color: var(--dark-red);
+    padding: 7px 14px;
+    border-radius: var(--radius);
+    font-size: 18px;
+    transition: var(--transition);
+
+}
+.about .texts a:hover{
+    background-color: red;
+}
+.about .texts p{
+    padding-bottom: 30px;
+}
 
 
 /* Cars section */
@@ -140,7 +216,8 @@ header a{
 .car .cards div {
     height: 300px;
     background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center bottom;
     border-radius: var(--radius);
     transition: var(--transition);
 }
@@ -319,16 +396,17 @@ header a{
     height: 300px;
     background-repeat: no-repeat;
     background-size: 30% 100%;
+    background-position: left bottom;
     border-radius: var(--radius);
     transition: var(--transition);
     background-color: #eee;
 }
 
 .blog .cards .blog1{
-    background-image: url("imgs/car1.jpg");
+    background-image: url("imgs/car13.jpg");
 }
 .blog .cards .blog2{
-    background-image: url("imgs/car2.jpg");
+    background-image: url("imgs/car14.jpg");
 }
 .blog .cards .blog3{
     background-image: url("imgs/car11.jpg");
@@ -375,4 +453,71 @@ header a{
     color: #eee;
     cursor: pointer;
     transform: scale(1.03);
+}
+
+/* end blog */
+/* footer */
+.foot{
+    background-color: #050505;
+    padding: 40px 150px;
+    border-top: 2px solid red;
+    font-size: 20px;;
+
+}
+
+
+.foot .data{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+}
+.foot .social ul{
+    display: flex;
+}
+.foot li{
+    padding: 1px;
+    letter-spacing: 1px;
+    
+}
+.social img{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.foot .dev{
+    text-align: center;
+    letter-spacing: 3px;
+    padding-top: 20px;
+    font-size: 16px;
+}
+
+.foot ,
+.foot li a{
+    color: #858383
+}
+
+
+
+.foot .media i {
+    font-size: 20px;
+    padding: 10px;
+    transition: var(--transition);
+}
+
+
+.foot .social .to-red:hover ,
+.foot ul li a:hover ,
+.foot ul i:hover ,
+.foot ul li:hover{
+    color: var(--dark-red);
+    cursor: pointer;
+    font-size: 21px;
+}
+
+
+.foot h3 ,
+.foot h2{
+    font-size: 30px;
 }
